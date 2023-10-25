@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using OtpNet;
+﻿using OtpNet;
 
 namespace TOTPApp.Classes
 {
