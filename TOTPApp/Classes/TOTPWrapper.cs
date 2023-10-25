@@ -9,6 +9,8 @@ namespace TOTPApp.Classes
         public string Name { get; set; }
 
         public string EncryptedSecret { get; set; }
+
+        private string decryptedSecret;
         
         private Totp totp;
 
@@ -54,9 +56,9 @@ namespace TOTPApp.Classes
 
         private Totp CreateTOTP(string password)
         {
-            string secret = Encrypter.Decrypt(EncryptedSecret, password);
+            decryptedSecret = Encrypter.Decrypt(EncryptedSecret, password);
 
-            var secretBytes = Base32Encoding.ToBytes(secret);
+            var secretBytes = Base32Encoding.ToBytes(decryptedSecret);
 
             return new(secretBytes);
         }
@@ -68,5 +70,9 @@ namespace TOTPApp.Classes
             return Name;
         }
 
+        internal void ChangePassword(string newpassword)
+        {
+            EncryptedSecret = Encrypter.Encrypt(decryptedSecret, newpassword);
+        }
     }
 }

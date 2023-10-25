@@ -36,6 +36,7 @@
             this.buttonNew = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.labelCopyHelper = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -117,12 +118,25 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.linkLabel1);
             this.splitContainer1.Panel2.Controls.Add(this.labelCopyHelper);
             this.splitContainer1.Panel2.Controls.Add(this.textBoxTOTPCode);
             this.splitContainer1.Panel2.Controls.Add(this.progressBarTimeRemaining);
             this.splitContainer1.Size = new System.Drawing.Size(465, 170);
             this.splitContainer1.SplitterDistance = 184;
             this.splitContainer1.TabIndex = 16;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(17, 140);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(101, 15);
+            this.linkLabel1.TabIndex = 16;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Change password";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel1_LinkClicked);
             // 
             // labelCopyHelper
             // 
@@ -135,13 +149,14 @@
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(465, 170);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "TOTP App";
+            this.Load += new System.EventHandler(this.Main_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
@@ -161,5 +176,6 @@
         private Button buttonDelete;
         private SplitContainer splitContainer1;
         private Label labelCopyHelper;
+        private LinkLabel linkLabel1;
     }
 }

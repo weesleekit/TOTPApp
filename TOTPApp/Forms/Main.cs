@@ -12,38 +12,45 @@ namespace TOTPApp.Forms
         // Fields
 
         private readonly List<TOTPWrapper> tOTPs = new();
-        private readonly string password;
+        private string password;
         private DateTime? nextUpdate = null;
         private bool copyMessageActive = false;
 
         // Constructor
 
-        public Main(string password, out bool success)
+        public Main()
         {
             InitializeComponent();
 
-            this.password = password;
-
             tOTPs = LoadSaveManager.LoadTotps();
+        }
 
-            foreach (var totp in tOTPs)
+        private void Main_Load(object sender, EventArgs e)
+        {
+            Hide();
+
+            string titleMessage = tOTPs.Any() ? "Enter Password" : "Set Password";
+
+            do
             {
-                if (!totp.TryUnlock(password))
+                var result = InputDialog.ShowPasswordInputDialog(out password, titleMessage, this);
+
+                if (result == DialogResult.Cancel)
                 {
-                    success = false;
-                    Close();
+                    Application.Exit();
                     return;
                 }
-            }
 
-            success = true;
+            } while (!TryUnlockUsingPassword(password));
 
             listBoxTotps.Items.AddRange(tOTPs.ToArray());
 
             if (listBoxTotps.Items.Count > 0)
             {
-                listBoxTotps.SelectedIndex  = 0;
+                listBoxTotps.SelectedIndex = 0;
             }
+
+            Show();
         }
 
         // Internal Methods
@@ -119,6 +126,25 @@ namespace TOTPApp.Forms
             RefreshCode(tOTP);
         }
 
+        private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var result = InputDialog.ShowPasswordInputDialog(out string newpassword, "New Password", this);
+
+            if (result == DialogResult.Cancel)
+            {
+                return;
+            }
+
+            password = newpassword;
+
+            foreach (var totp in tOTPs)
+            {
+                totp.ChangePassword(newpassword);
+            }
+
+            LoadSaveManager.SaveTotps(tOTPs);
+        }
+
         // Private Methods
 
         private void RefreshCode(TOTPWrapper tOTP)
@@ -148,6 +174,19 @@ namespace TOTPApp.Forms
             await Task.Delay(copyTextDelayInMiliseconds);
             labelCopyHelper.Text = tempText;
             copyMessageActive = false;
+        }
+
+        private bool TryUnlockUsingPassword(string password)
+        {
+            foreach (var totp in tOTPs)
+            {
+                if (!totp.TryUnlock(password))
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 }
