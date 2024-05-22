@@ -21,7 +21,7 @@
             main.Show();
         }
 
-        private void buttonSave_Click(object sender, EventArgs e)
+        private void ButtonSave_Click(object sender, EventArgs e)
         {
             main.CreateNewTOTP(textBoxName.Text, textBoxSecret.Text);
             Close();

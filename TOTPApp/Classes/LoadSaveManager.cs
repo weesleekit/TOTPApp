@@ -17,7 +17,7 @@ namespace TOTPApp.Classes
 
             if (!File.Exists(path))
             {
-                return new();
+                return [];
             }
 
             string fileContents = File.ReadAllText(path);

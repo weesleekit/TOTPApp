@@ -11,8 +11,8 @@ namespace TOTPApp.Forms
 
         // Fields
 
-        private readonly List<TOTPWrapper> tOTPs = new();
-        private string password;
+        private readonly List<TOTPWrapper> tOTPs = [];
+        private string? password;
         private DateTime? nextUpdate = null;
         private bool copyMessageActive = false;
 
@@ -29,7 +29,7 @@ namespace TOTPApp.Forms
         {
             Hide();
 
-            string titleMessage = tOTPs.Any() ? "Enter Password" : "Set Password";
+            string titleMessage = tOTPs.Count != 0 ? "Enter Password" : "Set Password";
 
             do
             {
@@ -57,6 +57,11 @@ namespace TOTPApp.Forms
 
         internal void CreateNewTOTP(string name, string secret)
         {
+            if (password == null)
+            {
+                throw new Exception("Password is null");
+            }
+
             TOTPWrapper tOTP = new(name, secret, password);
 
             tOTPs.Add(tOTP);

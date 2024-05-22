@@ -28,77 +28,74 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxSecret = new System.Windows.Forms.TextBox();
-            this.textBoxName = new System.Windows.Forms.TextBox();
-            this.buttonSave = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            label2 = new Label();
+            label1 = new Label();
+            textBoxSecret = new TextBox();
+            textBoxName = new TextBox();
+            buttonSave = new Button();
+            SuspendLayout();
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 44);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 15);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Secret";
+            label2.AutoSize = true;
+            label2.Location = new Point(12, 44);
+            label2.Name = "label2";
+            label2.Size = new Size(39, 15);
+            label2.TabIndex = 8;
+            label2.Text = "Secret";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 15);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Name";
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 15);
+            label1.Name = "label1";
+            label1.Size = new Size(39, 15);
+            label1.TabIndex = 7;
+            label1.Text = "Name";
             // 
             // textBoxSecret
             // 
-            this.textBoxSecret.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxSecret.Location = new System.Drawing.Point(56, 41);
-            this.textBoxSecret.Name = "textBoxSecret";
-            this.textBoxSecret.Size = new System.Drawing.Size(276, 23);
-            this.textBoxSecret.TabIndex = 6;
+            textBoxSecret.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            textBoxSecret.Location = new Point(56, 41);
+            textBoxSecret.Name = "textBoxSecret";
+            textBoxSecret.Size = new Size(225, 23);
+            textBoxSecret.TabIndex = 6;
             // 
             // textBoxName
             // 
-            this.textBoxName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxName.Location = new System.Drawing.Point(56, 12);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(276, 23);
-            this.textBoxName.TabIndex = 5;
+            textBoxName.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            textBoxName.Location = new Point(56, 12);
+            textBoxName.Name = "textBoxName";
+            textBoxName.Size = new Size(225, 23);
+            textBoxName.TabIndex = 5;
             // 
             // buttonSave
             // 
-            this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSave.Location = new System.Drawing.Point(252, 70);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(80, 23);
-            this.buttonSave.TabIndex = 9;
-            this.buttonSave.Text = "Save";
-            this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            buttonSave.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            buttonSave.Location = new Point(201, 70);
+            buttonSave.Name = "buttonSave";
+            buttonSave.Size = new Size(80, 23);
+            buttonSave.TabIndex = 9;
+            buttonSave.Text = "Save";
+            buttonSave.UseVisualStyleBackColor = true;
+            buttonSave.Click += ButtonSave_Click;
             // 
             // NewTOTP
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(344, 113);
-            this.Controls.Add(this.buttonSave);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBoxSecret);
-            this.Controls.Add(this.textBoxName);
-            this.Name = "NewTOTP";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "NewTOTP";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NewTOTP_FormClosing);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
+            ClientSize = new Size(293, 110);
+            Controls.Add(buttonSave);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(textBoxSecret);
+            Controls.Add(textBoxName);
+            Name = "NewTOTP";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "NewTOTP";
+            FormClosing += NewTOTP_FormClosing;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

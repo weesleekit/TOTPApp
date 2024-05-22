@@ -28,142 +28,142 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.timerCodeRefresh = new System.Windows.Forms.Timer(this.components);
-            this.listBoxTotps = new System.Windows.Forms.ListBox();
-            this.textBoxTOTPCode = new System.Windows.Forms.TextBox();
-            this.progressBarTimeRemaining = new System.Windows.Forms.ProgressBar();
-            this.buttonNew = new System.Windows.Forms.Button();
-            this.buttonDelete = new System.Windows.Forms.Button();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.labelCopyHelper = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            timerCodeRefresh = new System.Windows.Forms.Timer(components);
+            listBoxTotps = new ListBox();
+            textBoxTOTPCode = new TextBox();
+            progressBarTimeRemaining = new ProgressBar();
+            buttonNew = new Button();
+            buttonDelete = new Button();
+            splitContainer1 = new SplitContainer();
+            linkLabel1 = new LinkLabel();
+            labelCopyHelper = new Label();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
+            splitContainer1.Panel1.SuspendLayout();
+            splitContainer1.Panel2.SuspendLayout();
+            splitContainer1.SuspendLayout();
+            SuspendLayout();
             // 
             // timerCodeRefresh
             // 
-            this.timerCodeRefresh.Enabled = true;
-            this.timerCodeRefresh.Tick += new System.EventHandler(this.TimerCodeRefresh_Tick);
+            timerCodeRefresh.Enabled = true;
+            timerCodeRefresh.Tick += TimerCodeRefresh_Tick;
             // 
             // listBoxTotps
             // 
-            this.listBoxTotps.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBoxTotps.FormattingEnabled = true;
-            this.listBoxTotps.ItemHeight = 15;
-            this.listBoxTotps.Location = new System.Drawing.Point(3, 31);
-            this.listBoxTotps.Name = "listBoxTotps";
-            this.listBoxTotps.ScrollAlwaysVisible = true;
-            this.listBoxTotps.Size = new System.Drawing.Size(178, 124);
-            this.listBoxTotps.TabIndex = 1;
-            this.listBoxTotps.SelectedIndexChanged += new System.EventHandler(this.ListBoxTotps_SelectedIndexChanged);
+            listBoxTotps.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            listBoxTotps.FormattingEnabled = true;
+            listBoxTotps.ItemHeight = 15;
+            listBoxTotps.Location = new Point(3, 31);
+            listBoxTotps.Name = "listBoxTotps";
+            listBoxTotps.ScrollAlwaysVisible = true;
+            listBoxTotps.Size = new Size(210, 124);
+            listBoxTotps.TabIndex = 1;
+            listBoxTotps.SelectedIndexChanged += ListBoxTotps_SelectedIndexChanged;
             // 
             // textBoxTOTPCode
             // 
-            this.textBoxTOTPCode.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxTOTPCode.Location = new System.Drawing.Point(17, 31);
-            this.textBoxTOTPCode.Name = "textBoxTOTPCode";
-            this.textBoxTOTPCode.ReadOnly = true;
-            this.textBoxTOTPCode.Size = new System.Drawing.Size(246, 35);
-            this.textBoxTOTPCode.TabIndex = 11;
-            this.textBoxTOTPCode.Text = "123456";
-            this.textBoxTOTPCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxTOTPCode.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TextBoxTOTPCode_MouseClick);
+            textBoxTOTPCode.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            textBoxTOTPCode.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxTOTPCode.Location = new Point(17, 31);
+            textBoxTOTPCode.Name = "textBoxTOTPCode";
+            textBoxTOTPCode.ReadOnly = true;
+            textBoxTOTPCode.Size = new Size(246, 35);
+            textBoxTOTPCode.TabIndex = 11;
+            textBoxTOTPCode.Text = "123456";
+            textBoxTOTPCode.TextAlign = HorizontalAlignment.Center;
+            textBoxTOTPCode.MouseClick += TextBoxTOTPCode_MouseClick;
             // 
             // progressBarTimeRemaining
             // 
-            this.progressBarTimeRemaining.Location = new System.Drawing.Point(17, 68);
-            this.progressBarTimeRemaining.Name = "progressBarTimeRemaining";
-            this.progressBarTimeRemaining.Size = new System.Drawing.Size(246, 14);
-            this.progressBarTimeRemaining.TabIndex = 12;
-            this.progressBarTimeRemaining.Value = 50;
+            progressBarTimeRemaining.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            progressBarTimeRemaining.Location = new Point(17, 68);
+            progressBarTimeRemaining.Name = "progressBarTimeRemaining";
+            progressBarTimeRemaining.Size = new Size(246, 14);
+            progressBarTimeRemaining.TabIndex = 12;
+            progressBarTimeRemaining.Value = 50;
             // 
             // buttonNew
             // 
-            this.buttonNew.Location = new System.Drawing.Point(11, 3);
-            this.buttonNew.Name = "buttonNew";
-            this.buttonNew.Size = new System.Drawing.Size(75, 23);
-            this.buttonNew.TabIndex = 14;
-            this.buttonNew.Text = "New";
-            this.buttonNew.UseVisualStyleBackColor = true;
-            this.buttonNew.Click += new System.EventHandler(this.ButtonNew_Click);
+            buttonNew.Location = new Point(11, 3);
+            buttonNew.Name = "buttonNew";
+            buttonNew.Size = new Size(75, 23);
+            buttonNew.TabIndex = 14;
+            buttonNew.Text = "New";
+            buttonNew.UseVisualStyleBackColor = true;
+            buttonNew.Click += ButtonNew_Click;
             // 
             // buttonDelete
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(92, 3);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(75, 23);
-            this.buttonDelete.TabIndex = 15;
-            this.buttonDelete.Text = "Delete";
-            this.buttonDelete.UseVisualStyleBackColor = true;
-            this.buttonDelete.Click += new System.EventHandler(this.ButtonDelete_Click);
+            buttonDelete.Location = new Point(92, 3);
+            buttonDelete.Name = "buttonDelete";
+            buttonDelete.Size = new Size(75, 23);
+            buttonDelete.TabIndex = 15;
+            buttonDelete.Text = "Delete";
+            buttonDelete.UseVisualStyleBackColor = true;
+            buttonDelete.Click += ButtonDelete_Click;
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
+            splitContainer1.Dock = DockStyle.Fill;
+            splitContainer1.FixedPanel = FixedPanel.Panel2;
+            splitContainer1.Location = new Point(0, 0);
+            splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.listBoxTotps);
-            this.splitContainer1.Panel1.Controls.Add(this.buttonDelete);
-            this.splitContainer1.Panel1.Controls.Add(this.buttonNew);
+            splitContainer1.Panel1.Controls.Add(listBoxTotps);
+            splitContainer1.Panel1.Controls.Add(buttonDelete);
+            splitContainer1.Panel1.Controls.Add(buttonNew);
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.linkLabel1);
-            this.splitContainer1.Panel2.Controls.Add(this.labelCopyHelper);
-            this.splitContainer1.Panel2.Controls.Add(this.textBoxTOTPCode);
-            this.splitContainer1.Panel2.Controls.Add(this.progressBarTimeRemaining);
-            this.splitContainer1.Size = new System.Drawing.Size(465, 170);
-            this.splitContainer1.SplitterDistance = 184;
-            this.splitContainer1.TabIndex = 16;
+            splitContainer1.Panel2.Controls.Add(linkLabel1);
+            splitContainer1.Panel2.Controls.Add(labelCopyHelper);
+            splitContainer1.Panel2.Controls.Add(textBoxTOTPCode);
+            splitContainer1.Panel2.Controls.Add(progressBarTimeRemaining);
+            splitContainer1.Size = new Size(497, 163);
+            splitContainer1.SplitterDistance = 216;
+            splitContainer1.TabIndex = 16;
             // 
             // linkLabel1
             // 
-            this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(17, 140);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(101, 15);
-            this.linkLabel1.TabIndex = 16;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Change password";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel1_LinkClicked);
+            linkLabel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            linkLabel1.AutoSize = true;
+            linkLabel1.Location = new Point(17, 133);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(101, 15);
+            linkLabel1.TabIndex = 16;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Change password";
+            linkLabel1.LinkClicked += LinkLabel1_LinkClicked;
             // 
             // labelCopyHelper
             // 
-            this.labelCopyHelper.Location = new System.Drawing.Point(15, 11);
-            this.labelCopyHelper.Name = "labelCopyHelper";
-            this.labelCopyHelper.Size = new System.Drawing.Size(250, 15);
-            this.labelCopyHelper.TabIndex = 15;
-            this.labelCopyHelper.Text = "Click code to copy to clipboard";
-            this.labelCopyHelper.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelCopyHelper.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            labelCopyHelper.Location = new Point(15, 11);
+            labelCopyHelper.Name = "labelCopyHelper";
+            labelCopyHelper.Size = new Size(250, 15);
+            labelCopyHelper.TabIndex = 15;
+            labelCopyHelper.Text = "Click code to copy to clipboard";
+            labelCopyHelper.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(465, 170);
-            this.Controls.Add(this.splitContainer1);
-            this.Name = "Main";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "TOTP App";
-            this.Load += new System.EventHandler(this.Main_Load);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
+            ClientSize = new Size(497, 163);
+            Controls.Add(splitContainer1);
+            Name = "Main";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "TOTP App";
+            Load += Main_Load;
+            splitContainer1.Panel1.ResumeLayout(false);
+            splitContainer1.Panel2.ResumeLayout(false);
+            splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
+            splitContainer1.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion
